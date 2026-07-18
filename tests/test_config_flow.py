@@ -64,7 +64,7 @@ def test_error_result_carries_no_identity():
 # focus on the flow logic - that the entry is updated in place and that another
 # speaker is refused.
 
-_EXISTING_SERIAL = "6385504775"
+_EXISTING_SERIAL = "SIM0001234"
 
 
 @pytest.fixture
@@ -131,7 +131,7 @@ async def test_reconfigure_refuses_a_different_speaker(hass, _custom_integration
     """Repointing an entry at another unit would graft its history onto it."""
     entry = _entry(hass)
     identity = DeviceIdentity(
-        product="KH 750", serial="6305501197", vendor="Georg Neumann GmbH"
+        product="KH 750", serial="SIM0007500", vendor="Georg Neumann GmbH"
     )
 
     result = await _run_reconfigure(hass, entry, identity)
